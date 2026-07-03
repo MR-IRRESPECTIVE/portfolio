@@ -460,9 +460,14 @@ body.cursor-hide #cursor-ring { opacity: 0; }
   justify-content: space-between;
   align-items: flex-end;
   padding: 0 4rem 2.5rem;
-  z-index: 20;
+  z-index: 30;
   pointer-events: none;
 }
+/* Re-enable clicks on interactive hero elements */
+.hero-badge,
+.hero-socials,
+.hero-social-link,
+.hero-resume-btn { pointer-events: auto; }
 @media (max-width: 768px) {
   .hero-content { padding: 0 1.5rem 7rem; flex-direction: column; align-items: flex-start; gap: 0; }
 }
@@ -489,7 +494,7 @@ body.cursor-hide #cursor-ring { opacity: 0; }
   transform: translateY(110%);
 }
 em.hero-name-inner { font-style: italic; }
-.hero-right { text-align: right; pointer-events: none; }
+.hero-right { text-align: right; }
 .hero-since-num {
   font-family: var(--font-mono);
   font-size: 1.2rem;
