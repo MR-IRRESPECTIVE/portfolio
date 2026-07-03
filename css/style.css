@@ -191,7 +191,12 @@ body.cursor-hide #cursor-ring { opacity: 0; }
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--col-white);
-  transform: translateY(110%);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: loaderNameIn 0.7s ease forwards 0.4s;
+}
+@keyframes loaderNameIn {
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ============================================
@@ -1054,3 +1059,117 @@ em.hero-name-inner { font-style: italic; }
   .contact-mailto-btn { border-left: 1px solid var(--col-white); }
   .contact-footer-bar { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
 }
+
+/* ============================================
+   HERO — BADGE, SOCIALS, RESUME
+   ============================================ */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid rgba(48, 184, 255, 0.3);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  background: rgba(48, 184, 255, 0.06);
+}
+.hero-badge-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #30b8ff;
+  animation: pulseDot 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.7); }
+}
+
+.hero-socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.4rem;
+  flex-wrap: wrap;
+}
+.hero-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+.hero-social-link:hover { color: #fff; opacity: 1; }
+.hero-social-link svg   { opacity: 0.7; flex-shrink: 0; }
+
+.hero-resume-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 0.55rem 1.1rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.04);
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  cursor: pointer;
+}
+.hero-resume-btn:hover {
+  background: rgba(48,184,255,0.1);
+  border-color: rgba(48,184,255,0.5);
+  color: #fff;
+}
+
+/* ============================================
+   PROJECT — CASE STUDY STATS
+   ============================================ */
+.project-case-study {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--col-dim);
+}
+.project-cs-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--col-blue);
+  margin-bottom: 0.6rem;
+}
+.project-cs-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.project-cs-stats span {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.55);
+  padding: 0.25rem 0.65rem;
+  border: 1px solid var(--col-dim);
+  border-radius: 3px;
+}
+
+/* Contact social links stacked */
+.contact-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+

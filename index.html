@@ -5,9 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rohan Chakraborty — Builder. Organizer. Founder.</title>
   <meta name="description" content="Rohan Chakraborty — BTech CSE AI/ML student at Techno India, event organizer, founder of Living Result. Based in Kolkata, India." />
+
+  <!-- Open Graph (link previews on LinkedIn, Twitter, WhatsApp) -->
   <meta property="og:title" content="Rohan Chakraborty — Builder. Organizer. Founder." />
   <meta property="og:description" content="BTech CSE AI/ML student, event organizer, and founder of Living Result." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/rohan_transparent.png" />
+  <meta property="og:image:width" content="800" />
+  <meta property="og:image:height" content="1000" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="assets/rohan_transparent.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Preload critical asset -->
+  <link rel="preload" href="assets/rohan_transparent.png" as="image" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,8 +31,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-  <!-- Lenis Smooth Scroll -->
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 
   <!-- Three.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
@@ -111,10 +122,31 @@
             <span class="hero-name-line"><span class="hero-name-inner">ROHAN</span></span>
             <span class="hero-name-line"><em class="hero-name-inner">CHAKRABORTY</em></span>
           </h1>
+          <!-- Availability badge -->
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            <span>Available for internships</span>
+          </div>
+          <!-- Social links -->
+          <div class="hero-socials">
+            <a href="https://github.com/MR-IRRESPECTIVE" target="_blank" rel="noopener" class="hero-social-link" aria-label="GitHub">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+              GitHub
+            </a>
+            <a href="https://www.instagram.com/_cryhan_/" target="_blank" rel="noopener" class="hero-social-link" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              Instagram
+            </a>
+          </div>
         </div>
         <div class="hero-right">
           <p class="hero-since-num">3rd</p>
           <p class="hero-since-label">YEAR STUDENT</p>
+          <!-- Resume button -->
+          <a href="assets/rohan_resume.pdf" download class="hero-resume-btn" id="resume-btn">
+            <span>Resume</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </a>
         </div>
       </div>
 
@@ -313,13 +345,21 @@
                 <div class="project-tags">
                   <span class="project-tag">Event Management</span>
                   <span class="project-tag">Leadership</span>
-                  <span class="project-tag">Team</span>
+                  <span class="project-tag">300+ Attendees</span>
+                  <span class="project-tag">Techno India</span>
                 </div>
               </div>
             </div>
             <div class="project-item-right">
-              <p class="project-desc">Conceptualized and organized a brand-new event at Techno India Education from the ground up — coordinating teams, logistics, and participant experiences. The event was a massive success, drawing widespread college participation.</p>
-              <span class="project-link-icon">✦</span>
+              <p class="project-desc">Conceptualized and organized a brand-new flagship event at Techno India Education from scratch — coordinating a team of 12+, managing on-ground logistics, sponsorship outreach, and the live participant experience. The event drew 300+ attendees and was declared a resounding success by the faculty and student council.</p>
+              <div class="project-case-study">
+                <span class="project-cs-label">Impact</span>
+                <div class="project-cs-stats">
+                  <span>300+ Attendees</span>
+                  <span>12+ Team Members</span>
+                  <span>Full Turnout</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -329,15 +369,22 @@
               <div class="project-info">
                 <h3 class="project-title">Interschool Coding Competitions</h3>
                 <div class="project-tags">
-                  <span class="project-tag">Competition</span>
-                  <span class="project-tag">Coding</span>
-                  <span class="project-tag">MP Birla</span>
+                  <span class="project-tag">2× Winner</span>
+                  <span class="project-tag">Competitive Coding</span>
+                  <span class="project-tag">MP Birla HSS</span>
                 </div>
               </div>
             </div>
             <div class="project-item-right">
-              <p class="project-desc">Represented MP Birla Foundation Higher Secondary School in 2 interschool coding competitions. Competed against top student programmers and brought home wins that put our school on the tech map.</p>
-              <span class="project-link-icon">✦</span>
+              <p class="project-desc">Represented MP Birla Foundation Higher Secondary School in 2 interschool coding competitions and won both — competing against the best student programmers across Kolkata. This led to founding the school's Tech Club and eventually becoming its Vice President.</p>
+              <div class="project-case-study">
+                <span class="project-cs-label">Results</span>
+                <div class="project-cs-stats">
+                  <span>2× 1st Place</span>
+                  <span>Multiple Schools</span>
+                  <span>VP Tech Club</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -416,9 +463,9 @@
             </a>
           </div>
           <div class="contact-right">
-            <a href="https://www.getlivingresult.in" target="_blank" rel="noopener" class="contact-social">
-              Living Result ↗
-            </a>
+            <a href="https://www.getlivingresult.in" target="_blank" rel="noopener" class="contact-social">Living Result ↗</a>
+            <a href="https://github.com/MR-IRRESPECTIVE" target="_blank" rel="noopener" class="contact-social">GitHub ↗</a>
+            <a href="https://www.instagram.com/_cryhan_/" target="_blank" rel="noopener" class="contact-social">Instagram ↗</a>
           </div>
         </div>
 

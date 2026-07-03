@@ -8,10 +8,6 @@
   // ===== 1. GSAP PLUGIN REGISTRATION =====
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-  // ===== 2. SMOOTH SCROLL =====
-  // Leaning on native smooth scrolling and GSAP fallbacks for maximum stability.
-  const lenis = null;
-
   // ===== 3. LIVE CLOCK (IST) =====
   function updateClock() {
     const el = document.getElementById('local-time');
@@ -35,16 +31,8 @@
       const targetId = link.getAttribute('href');
       const target   = document.querySelector(targetId);
       if (!target) return;
-
-      if (lenis) {
-        lenis.scrollTo(target, {
-          offset: -80,
-          duration: 1.5
-        });
-      } else {
-        const top = target.getBoundingClientRect().top + window.scrollY - 80;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
+      const top = target.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top, behavior: 'smooth' });
       closeMobileMenu();
     });
   });
