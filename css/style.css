@@ -165,7 +165,7 @@ body.cursor-hide #cursor-ring { opacity: 0; }
 .loader-inner {
   position: relative;
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   padding: 0 2rem;
 }
 .loader-counter  { text-align: right; margin-bottom: 1.5rem; }
@@ -187,10 +187,11 @@ body.cursor-hide #cursor-ring { opacity: 0; }
   display: block;
   font-family: var(--font-syne);
   font-weight: 800;
-  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-size: clamp(1.2rem, 5vw, 2.5rem);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--col-white);
+  white-space: nowrap;
   opacity: 0;
   transform: translateY(30px);
   animation: loaderNameIn 0.7s ease forwards 0.4s;
