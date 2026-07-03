@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rohan Chakraborty — Builder. Organizer. Founder.</title>
+  <meta name="description" content="Rohan Chakraborty — BTech CSE AI/ML student at Techno India, event organizer, founder of Living Result. Based in Kolkata, India." />
+  <meta property="og:title" content="Rohan Chakraborty — Builder. Organizer. Founder." />
+  <meta property="og:description" content="BTech CSE AI/ML student, event organizer, and founder of Living Result." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-scrolled="false">
+
+  <!-- Custom Cursor -->
+  <div id="cursor">
+    <div id="cursor-dot"><span>VIEW</span></div>
+    <div id="cursor-ring"></div>
+  </div>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-counter">
+        <span id="loader-num">000</span>
+      </div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar"></div>
+      </div>
+      <div class="loader-name">
+        <span class="loader-name-text">ROHAN CHAKRABORTY</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- WebGL Canvas Background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Header / Nav -->
+  <header id="header">
+    <div class="header-inner">
+      <nav class="nav-left">
+        <a href="#about" class="nav-link" data-nav>About</a>
+        <a href="#skills" class="nav-link" data-nav>Skills</a>
+      </nav>
+      <div class="header-logo">
+        <span>RC</span>
+      </div>
+      <nav class="nav-right">
+        <a href="#projects" class="nav-link" data-nav>Projects</a>
+        <a href="#contact" class="nav-link" data-nav>Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile nav toggle -->
+  <button id="menu-toggle" aria-label="Menu">
+    <span></span><span></span>
+  </button>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu">
+    <nav class="mobile-nav">
+      <a href="#about" class="mobile-nav-link" data-mobile-nav>About</a>
+      <a href="#skills" class="mobile-nav-link" data-mobile-nav>Skills</a>
+      <a href="#projects" class="mobile-nav-link" data-mobile-nav>Projects</a>
+      <a href="#contact" class="mobile-nav-link" data-mobile-nav>Contact</a>
+    </nav>
+  </div>
+
+  <!-- Side clock -->
+  <div class="side-info left">
+    <p class="side-text" id="local-time">00:00 IST KOLKATA</p>
+  </div>
+  <div class="side-info right">
+    <p class="side-text">PORTFOLIO — 2026</p>
+  </div>
+
+  <!-- SCROLL INDICATOR -->
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-hint-line">
+      <div class="scroll-hint-bar"></div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ===================== HERO ===================== -->
+    <section id="hero" class="section-hero">
+      <div class="hero-content">
+        <div class="hero-left">
+          <p class="hero-tag">&frasl; BTech CSE AI/ML — KOLKATA</p>
+          <h1 class="hero-name">
+            <span class="hero-name-line"><span class="hero-name-inner">ROHAN</span></span>
+            <span class="hero-name-line"><em class="hero-name-inner">CHAKRABORTY</em></span>
+          </h1>
+        </div>
+        <div class="hero-right">
+          <p class="hero-since-num">3rd</p>
+          <p class="hero-since-label">YEAR STUDENT</p>
+        </div>
+      </div>
+
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-container">
+          <div id="portrait-canvas" class="hero-photo"></div>
+          <div class="hero-photo-overlay"></div>
+        </div>
+      </div>
+
+
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="section section-about">
+      <div class="section-inner">
+        <div class="section-label reveal">— WHO I AM</div>
+
+        <div class="about-grid">
+          <div class="about-big-text reveal">
+            A <strong>builder</strong><br />
+            <span class="about-sub-text">fueled by events <br />&amp; <strong>entrepreneurship</strong></span>
+          </div>
+
+          <div class="about-body">
+            <p class="about-line reveal" style="--delay:0ms">
+              I'm a 3rd-year BTech CSE (AI/ML) student at Techno India Education, Kolkata — but I've never let curriculum define my ambition.
+            </p>
+            <p class="about-line reveal" style="--delay:100ms">
+              I thrive at the intersection of <strong>technology, leadership, and community</strong>. Whether it's orchestrating a packed college event or building a lean e-commerce startup from scratch, I show up ready to make things happen.
+            </p>
+            <p class="about-line reveal" style="--delay:200ms">
+              Outside the classroom, I run <strong>Living Result</strong> — a fast-growing gym supplements venture that's proving you don't need a degree to build a real business. Just grit, timing, and a great team.
+            </p>
+            <a href="mailto:rohanchakraborty766.work@gmail.com" class="about-email reveal" style="--delay:300ms">
+              rohanchakraborty766.work@gmail.com <span>↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section id="skills" class="section section-skills">
+      <div class="section-inner">
+        <div class="section-label reveal">— WHAT I DO</div>
+
+        <div class="skills-heading reveal">
+          <span>Capabilities</span>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card reveal" style="--delay:0ms">
+            <div class="skill-card-num">01</div>
+            <h3 class="skill-card-title">Coding</h3>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-level="60">
+                <div class="skill-bar-fill"></div>
+              </div>
+              <span class="skill-level">Intermediate</span>
+            </div>
+            <p class="skill-card-desc">Web development, Python scripting, logic-driven problem solving. Competed in 2 interschool coding events.</p>
+          </div>
+
+          <div class="skill-card reveal" style="--delay:100ms">
+            <div class="skill-card-num">02</div>
+            <h3 class="skill-card-title">Event Management</h3>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-level="85">
+                <div class="skill-bar-fill"></div>
+              </div>
+              <span class="skill-level">Advanced</span>
+            </div>
+            <p class="skill-card-desc">Organized flagship events at Techno India &amp; MP Birla. Former Tech Club VP. Team leadership through chaos.</p>
+          </div>
+
+          <div class="skill-card reveal" style="--delay:200ms">
+            <div class="skill-card-num">03</div>
+            <h3 class="skill-card-title">Entrepreneurship</h3>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-level="72">
+                <div class="skill-bar-fill"></div>
+              </div>
+              <span class="skill-level">Growing</span>
+            </div>
+            <p class="skill-card-desc">Founded Living Result, a D2C supplements brand. Managing supply chains, marketing, and steady month-over-month growth.</p>
+          </div>
+
+          <div class="skill-card reveal" style="--delay:300ms">
+            <div class="skill-card-num">04</div>
+            <h3 class="skill-card-title">Photo &amp; Video Editing</h3>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-level="40">
+                <div class="skill-bar-fill"></div>
+              </div>
+              <span class="skill-level">Beginner</span>
+            </div>
+            <p class="skill-card-desc">Producing content for events and brand marketing. Learning fast, improving every day.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE / TIMELINE ===================== -->
+    <section id="experience" class="section section-experience">
+      <div class="section-inner">
+        <div class="section-label reveal">— JOURNEY</div>
+
+        <div class="timeline">
+
+          <div class="timeline-item reveal" style="--delay:0ms">
+            <div class="timeline-year">2026</div>
+            <div class="timeline-content">
+              <div class="timeline-dot"></div>
+              <div class="timeline-body">
+                <span class="timeline-tag">Startup</span>
+                <h3 class="timeline-title">Founder, Living Result</h3>
+                <p class="timeline-desc">Built and launched a direct-to-consumer gym supplements brand at India's lowest prices. Currently managing product curation, e-commerce operations, and marketing for <a href="https://www.getlivingresult.in" target="_blank" rel="noopener">getlivingresult.in</a> — and it's steadily growing.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal" style="--delay:100ms">
+            <div class="timeline-year">2025</div>
+            <div class="timeline-content">
+              <div class="timeline-dot"></div>
+              <div class="timeline-body">
+                <span class="timeline-tag">College · Leadership</span>
+                <h3 class="timeline-title">Event Organizer, Techno India Education</h3>
+                <p class="timeline-desc">Conceptualized, planned, and successfully executed a brand-new flagship event at college with my team. Coordinated logistics, participants, sponsors, and on-ground experience — resulting in a massive turnout and resounding success.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal" style="--delay:200ms">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-content">
+              <div class="timeline-dot"></div>
+              <div class="timeline-body">
+                <span class="timeline-tag">Education · Current</span>
+                <h3 class="timeline-title">BTech CSE AI/ML, Techno India Education</h3>
+                <p class="timeline-desc">3rd-year undergraduate student specializing in Artificial Intelligence &amp; Machine Learning. Building a strong foundation in algorithms, data science, and software engineering.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal" style="--delay:300ms">
+            <div class="timeline-year">2023</div>
+            <div class="timeline-content">
+              <div class="timeline-dot"></div>
+              <div class="timeline-body">
+                <span class="timeline-tag">School · Achievement</span>
+                <h3 class="timeline-title">Vice President, Tech Club — MP Birla Foundation HSS</h3>
+                <p class="timeline-desc">Led the Technology Club as VP during school. Organized multiple inter-school events, fostered technical culture among students, and won 2 interschool coding competitions representing the school.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section id="projects" class="section section-projects">
+      <div class="section-inner">
+        <div class="section-label reveal">— PROJECTS &amp; WORK</div>
+
+        <div class="projects-list">
+
+          <a href="https://www.getlivingresult.in" target="_blank" rel="noopener" class="project-item reveal" style="--delay:0ms">
+            <div class="project-item-left">
+              <span class="project-num">01</span>
+              <div class="project-info">
+                <h3 class="project-title">Living Result</h3>
+                <div class="project-tags">
+                  <span class="project-tag">Next.js</span>
+                  <span class="project-tag">E-Commerce</span>
+                  <span class="project-tag">Startup</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-item-right">
+              <p class="project-desc">A premium gym supplements brand selling India's finest fitness products at the lowest prices. Built on Next.js with AI-powered product recommendations, real-time inventory, and a sleek dark-mode storefront.</p>
+              <span class="project-link-icon">↗</span>
+            </div>
+            <div class="project-hover-img">
+              <div class="project-hover-placeholder">Living Result</div>
+            </div>
+          </a>
+
+          <div class="project-item reveal" style="--delay:100ms" data-no-link>
+            <div class="project-item-left">
+              <span class="project-num">02</span>
+              <div class="project-info">
+                <h3 class="project-title">College Flagship Event</h3>
+                <div class="project-tags">
+                  <span class="project-tag">Event Management</span>
+                  <span class="project-tag">Leadership</span>
+                  <span class="project-tag">Team</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-item-right">
+              <p class="project-desc">Conceptualized and organized a brand-new event at Techno India Education from the ground up — coordinating teams, logistics, and participant experiences. The event was a massive success, drawing widespread college participation.</p>
+              <span class="project-link-icon">✦</span>
+            </div>
+          </div>
+
+          <div class="project-item reveal" style="--delay:200ms" data-no-link>
+            <div class="project-item-left">
+              <span class="project-num">03</span>
+              <div class="project-info">
+                <h3 class="project-title">Interschool Coding Competitions</h3>
+                <div class="project-tags">
+                  <span class="project-tag">Competition</span>
+                  <span class="project-tag">Coding</span>
+                  <span class="project-tag">MP Birla</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-item-right">
+              <p class="project-desc">Represented MP Birla Foundation Higher Secondary School in 2 interschool coding competitions. Competed against top student programmers and brought home wins that put our school on the tech map.</p>
+              <span class="project-link-icon">✦</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ACHIEVEMENTS ===================== -->
+    <section id="achievements" class="section section-achievements">
+      <div class="section-inner">
+        <div class="section-label reveal">— HIGHLIGHTS</div>
+
+        <div class="achievements-list">
+          <div class="achievement-item reveal" style="--delay:0ms">
+            <span class="achievement-num">01</span>
+            <div class="achievement-body">
+              <h3 class="achievement-title">2× Interschool Coding Champion</h3>
+              <p class="achievement-org">MP Birla Foundation Higher Secondary School</p>
+            </div>
+            <div class="achievement-badge">Win</div>
+          </div>
+          <div class="achievement-item reveal" style="--delay:100ms">
+            <span class="achievement-num">02</span>
+            <div class="achievement-body">
+              <h3 class="achievement-title">Vice President, Tech Club</h3>
+              <p class="achievement-org">MP Birla Foundation Higher Secondary School</p>
+            </div>
+            <div class="achievement-badge">Leadership</div>
+          </div>
+          <div class="achievement-item reveal" style="--delay:200ms">
+            <span class="achievement-num">03</span>
+            <div class="achievement-body">
+              <h3 class="achievement-title">Founder & CEO, Living Result</h3>
+              <p class="achievement-org">Bootstrapped supplement brand — steadily growing</p>
+            </div>
+            <div class="achievement-badge">Founder</div>
+          </div>
+          <div class="achievement-item reveal" style="--delay:300ms">
+            <span class="achievement-num">04</span>
+            <div class="achievement-body">
+              <h3 class="achievement-title">College Event Organizer</h3>
+              <p class="achievement-org">Techno India Education — Brand new event, huge success</p>
+            </div>
+            <div class="achievement-badge">Organizer</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT / FOOTER ===================== -->
+    <section id="contact" class="section section-contact">
+      <div class="section-inner">
+        <div class="contact-top">
+          <div class="section-label reveal">— GET IN TOUCH</div>
+        </div>
+
+        <div class="contact-marquee-wrap">
+          <div class="contact-marquee">
+            <div class="contact-marquee-track" id="marquee-track">
+              <span>Let's Build Something<span class="marquee-at"> @Rohan</span> ✦ </span>
+              <span>Let's Build Something<span class="marquee-at"> @Rohan</span> ✦ </span>
+              <span>Let's Build Something<span class="marquee-at"> @Rohan</span> ✦ </span>
+              <span>Let's Build Something<span class="marquee-at"> @Rohan</span> ✦ </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-actions">
+          <div class="contact-left">
+            <a href="mailto:rohanchakraborty766.work@gmail.com" class="contact-copy-btn" id="copy-email-btn" aria-label="Copy email">
+              <span class="contact-copy-text">COPY EMAIL</span>
+              <span class="contact-key">⌘C</span>
+            </a>
+            <a href="mailto:rohanchakraborty766.work@gmail.com" class="contact-mailto-btn">
+              SEND MESSAGE <span>↗</span>
+            </a>
+          </div>
+          <div class="contact-right">
+            <a href="https://www.getlivingresult.in" target="_blank" rel="noopener" class="contact-social">
+              Living Result ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-footer-bar">
+          <span class="contact-copyright">© 2026 Rohan Chakraborty</span>
+          <span class="contact-location">Kolkata, India</span>
+          <span class="contact-built">Designed with obsession.</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Copy toast -->
+  <div class="copy-toast" id="copy-toast">Email Copied!</div>
+
+  <script src="js/loader.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/bg.js"></script>
+  <script src="js/portrait.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

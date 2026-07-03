@@ -1,0 +1,13 @@
+# Logs
+*.log
+
+# OS Metadata
+.DS_Store
+Thumbs.db
+
+# Antigravity/Gemini system files
+.gemini/
+.agents/
+task.md
+implementation_plan.md
+walkthrough.md
