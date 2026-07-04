@@ -382,6 +382,15 @@
     color: var(--col-white) !important;
     background: transparent !important;
   }
+  .contact-copy-btn span, 
+  .contact-mailto-btn span {
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: inherit !important;
+    font-size: inherit !important;
+    transform: none !important;
+  }
   .contact-right { flex-direction: row; gap: 1.25rem; flex-wrap: wrap; }
   .contact-social {
     font-size: 0.6rem;
