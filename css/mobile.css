@@ -71,6 +71,10 @@
   .section-label::after { width: 2rem; }
   .section-label.reveal-done::after { max-width: 2rem; }
 
+  /* Hide custom cursor and scroll hint on mobile */
+  #cursor { display: none !important; }
+  .scroll-hint { display: none !important; }
+
   /* ===== HERO — CINEMATIC VERTICAL LAYOUT =====
      Portrait as full-screen backdrop (top), name full-width below.
      No side-by-side — not enough horizontal space for cinematic feel.
@@ -145,17 +149,17 @@
    *   Floor 2.5rem=40px → 11×40×0.58 = 255px < 272px ✓ (all pass)
    */
   .hero-name {
-    overflow: hidden; /* needed for slide-up animation */
+    overflow: visible; /* allow overflow just in case, gradient protects */
     line-height: 1;
   }
   .hero-name-line {
     display: block;
-    overflow: hidden; /* each line clips for animation */
+    overflow: visible;
   }
   .hero-name-inner {
-    font-size: clamp(2.5rem, 12vw, 5rem);
+    font-size: clamp(1.8rem, 8.5vw, 4rem);
     line-height: 0.88;
-    letter-spacing: 0em; /* remove letter-spacing to prevent overflow */
+    letter-spacing: -0.02em; /* tighten slightly to help fit */
   }
 
   /* Badge */
@@ -235,13 +239,7 @@
     border-radius: 3px;
   }
 
-  /* SCROLL HINT: reposition below the portrait, above content */
-  .scroll-hint {
-    bottom: auto;
-    /* Place scroll hint above the hero content area */
-    /* Hide it on mobile — content hints at scrolling naturally */
-    display: none;
-  }
+  /* SCROLL HINT: Hidden on mobile via top-level rule */
 
   /* ===== ABOUT ===== */
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -437,7 +435,7 @@
 
   /* Hero */
   .hero-content { padding: 0 1.25rem max(1.75rem, env(safe-area-inset-bottom)); }
-  .hero-name-inner { font-size: clamp(2.3rem, 12vw, 4rem); }
+  .hero-name-inner { font-size: clamp(1.7rem, 9vw, 3.5rem); }
   .hero-badge { font-size: 0.53rem; padding: 0.25rem 0.62rem; margin-top: 0.75rem; }
   .hero-socials { margin-top: 0.6rem; gap: 0.6rem; }
   .hero-social-link { font-size: 0.54rem; }
@@ -486,12 +484,7 @@
   .section-inner { padding: 3.5rem 1rem; }
 
   .hero-content { padding: 0 1rem max(1.5rem, env(safe-area-inset-bottom)); }
-  /*
-   * Name at 360px:
-   * 12vw = 43.2px → "CHAKRABORTY": 11×43.2×0.58 = 275px < (360-32)=328px ✓
-   * floor 2.3rem = 36.8px → 11×36.8×0.58 = 234px < 328px ✓
-   */
-  .hero-name-inner { font-size: clamp(2.3rem, 12vw, 3.5rem); }
+  .hero-name-inner { font-size: clamp(1.5rem, 8.5vw, 3rem); }
   .hero-badge { margin-top: 0.6rem; }
   .hero-socials { margin-top: 0.5rem; }
   .hero-right { margin-top: 0.75rem; padding-top: 0.6rem; }
