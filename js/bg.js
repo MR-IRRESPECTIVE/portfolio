@@ -7,8 +7,12 @@
   const canvas = document.getElementById('bg-canvas');
   if (!canvas || typeof THREE === 'undefined') return;
 
+  const isMobile = window.innerWidth < 768;
+  const isSmallPhone = window.innerWidth < 480;
+
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: false, alpha: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+  // Cap pixel ratio lower on mobile for GPU performance
+  renderer.setPixelRatio(isMobile ? Math.min(window.devicePixelRatio, 1.0) : Math.min(window.devicePixelRatio, 1.5));
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setClearColor(0x000000, 0);
 
@@ -16,9 +20,8 @@
   const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
   camera.position.z = 5;
 
-  // More particles, higher on mobile too
-  const isMobile = window.innerWidth < 768;
-  const count = isMobile ? 1200 : 3500;
+  // Tiered particle count by device size
+  const count = isSmallPhone ? 800 : isMobile ? 1200 : 3500;
 
   const positions    = new Float32Array(count * 3);
   const basePos      = new Float32Array(count * 3);

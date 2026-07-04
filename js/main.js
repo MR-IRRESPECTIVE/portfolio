@@ -111,31 +111,41 @@
   function setupHeroParallax() {
     const photo = document.querySelector('.hero-photo-container');
     if (!photo) return;
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = window.innerWidth <= 768;
+    // Reduce parallax travel on mobile; skip entirely if reduced motion
+    const travelY = prefersReduced ? 0 : isMobile ? 35 : 70;
+    const fadeAmt = isMobile ? 0.3 : 0.5;
     ScrollTrigger.create({
       trigger: '#hero',
       start: 'top top',
       end: 'bottom top',
       scrub: 2,
       onUpdate: (self) => {
-        gsap.set(photo, { y: self.progress * 70, opacity: 1 - self.progress * 0.5 });
+        gsap.set(photo, { y: self.progress * travelY, opacity: 1 - self.progress * fadeAmt });
       }
     });
   }
 
   // ===== 9. SCROLL REVEAL =====
   function setupReveal() {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = window.innerWidth <= 768;
+    const revealY = prefersReduced ? 0 : isMobile ? 18 : 30;
+    const revealDur = prefersReduced ? 0.4 : 0.9;
+
     // Simple fade-up for .reveal elements
     document.querySelectorAll('.reveal').forEach(el => {
-      gsap.set(el, { opacity: 0, y: 30 });
+      gsap.set(el, { opacity: 0, y: revealY });
       ScrollTrigger.create({
         trigger: el,
-        start: 'top 88%',
+        start: 'top 90%',
         onEnter: () => {
           gsap.to(el, {
             opacity: 1, y: 0,
-            duration: 0.9,
-            ease: 'power3.out',
-            delay: parseFloat(getComputedStyle(el).getPropertyValue('--delay') || '0') / 1000
+            duration: revealDur,
+            ease: prefersReduced ? 'none' : 'power3.out',
+            delay: prefersReduced ? 0 : parseFloat(getComputedStyle(el).getPropertyValue('--delay') || '0') / 1000
           });
           el.classList.add('reveal-done');
         }
